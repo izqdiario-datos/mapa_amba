@@ -81,11 +81,11 @@ fig = px.histogram(data[data.clae2_desc.isin(filtro)],y='empleo',color='clae2_de
             labels = {'clae2_desc':'Rama', 'empleo':'Trabajadores por establecimiento','%{x}':'Cantidad'},
             category_orders={'empleo':['1-9','10-49','50-199','200-499','500+']},
             barmode = 'group')
-    fig.update_traces(textposition='outside')
-    fig.update_layout(yaxis_title='<b>Cantidad de trabajadores por establecimiento</b>', 
+fig.update_traces(textposition='outside')
+fig.update_layout(yaxis_title='<b>Cantidad de trabajadores por establecimiento</b>', 
                       xaxis_title= '<b>Cantidad de establecimientos</b>',
                       legend ={'orientation':'h', 'y': -0.155})
 
-    st.plotly_chart(fig,use_container_width=True)
+st.plotly_chart(fig,use_container_width=True)
 
 st.write('Datos obtenidos a partir del **Mapa productivo-laboral argentino** elaborado por:  \n * _Ministerio de Economía_  \n * _Ministerio de Trabajo, Empleo, y Seguridad social_')
